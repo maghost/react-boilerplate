@@ -1,7 +1,7 @@
 import React from 'react'
 
 // STYLE
-import './Loading.css'
+import './Loading.scss'
 
 const Loading = () => {
 	return (
