@@ -1,18 +1,11 @@
-import React, { Component, Fragment } from 'react'
+/*
+USED TO RENDER MAIN APP COMPONENT
+INTO HTML INDEX FILE.
+*/
+import React from 'react'
 import { render } from 'react-dom'
 
 // COMPONENTS
-import PageTitle from './components/PageTitle/PageTitle'
-
-class App extends Component {
-	// no CONSTRUCTOR - if you do not initialize state or do not bind methods
-	render() {
-		return (
-			<Fragment>
-				<PageTitle title="React Component" />
-			</Fragment>
-		)
-	}
-}
+import App from './App'
 
 render(<App/>, document.getElementById('app'))

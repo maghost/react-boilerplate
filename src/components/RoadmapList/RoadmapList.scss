@@ -1,0 +1,23 @@
+
+.RoadmapList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+
+  &__list {
+    width: 20%;
+    min-height: 200px;
+    border: 1px dotted #c4c4c4;
+    list-style: none;
+    padding: 0;
+
+    &Item {
+      padding: 10px 0;
+
+      > input {
+        cursor: pointer;
+      }
+    }
+  }
+}
