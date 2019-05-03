@@ -1,8 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+
+// STYLE
+import './PageTitle.css'
+import Loading from '../Loading/Loading';
 
 const PageTitle = (props) => {
 	return (
-		<h1 className="PageTitle__title">{ props.title ? props.title : "Title" }</h1>
+		<div className="PageTitle">
+			<h1 className="PageTitle__title">{ props.title ? props.title : "Title" }</h1>
+			<Loading/>
+		</div>
 	)
 }
 
