@@ -19,7 +19,7 @@ const RoadmapList = ( props ) => {
 }
 
 const mapStateToProps = (state) => ({
-  roadmaps: state.roadmaps
+  roadmaps: state.roadmap
 })
 
 export default connect(mapStateToProps)(RoadmapList)
