@@ -1,4 +1,8 @@
-import React, { Component, Fragment } from 'react'
+/*
+USED TO RENDER MAIN APP COMPONENT
+INTO HTML INDEX FILE.
+*/
+import React from 'react'
 import { render } from 'react-dom'
 
 // STYLE
