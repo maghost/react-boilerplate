@@ -1,0 +1,9 @@
+
+.Counter {
+  display: flex;
+
+  &__value {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+}
