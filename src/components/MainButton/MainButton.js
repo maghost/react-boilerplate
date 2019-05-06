@@ -9,7 +9,7 @@ MainButton.defaultProps = {
 }
 
 MainButton.propTypes = {
-	children: PropTypes.string
+	children: PropTypes.string//.isRequired
 }
 
 const MainButton = ( props ) => {
