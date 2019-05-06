@@ -1,28 +1,34 @@
-import React from 'react'
+import React, { Component  } from 'react'
 import PropTypes from 'prop-types'
 
 // STYLE
 import './MainButton.scss'
 
-MainButton.defaultProps = {
-	children: 'Button Label'
-}
+export default class MainButton extends Component {
+	constructor(props) {
+		super(props)
+	}
 
-MainButton.propTypes = {
-	children: PropTypes.string//.isRequired
-}
+	static defaultProps = {
+		children: 'Button Label',
+	}
+	
+	static propTypes = {
+		children: PropTypes.string,//.isRequired
+		action: PropTypes.func.isRequired
+	}
 
-const MainButton = ( props ) => {
-
-	const showURL = () => {
+	showURL = () => {
 		alert(window.location.href)
 	}
 
-	return (
-		<button
-			className="MainButton"
-			onClick={() => showURL()}>{props.children}</button>
-	)
+	render() {
+			return (
+				<button
+					className="MainButton"
+					onClick={this.props.action}>{this.props.children}</button>
+			)
+	}
 }
 
-export default MainButton
+// export default MainButton
