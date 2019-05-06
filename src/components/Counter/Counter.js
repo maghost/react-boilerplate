@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 // STYLE
 import './Counter.scss'
@@ -6,13 +7,9 @@ import './Counter.scss'
 // COMPONENTS
 import MainButton from '../MainButton/MainButton';
 
-export default class Counter extends Component {
+class Counter extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      count: 0
-    }
   }
 
   addOne = () => {
@@ -27,9 +24,15 @@ export default class Counter extends Component {
     return (
       <div className="Counter">
         <MainButton action={this.removeOne}>Down</MainButton>
-        <p className="Counter__value">{this.state.count}</p>
+        <p className="Counter__value">{this.props.counter}</p>
         <MainButton action={this.addOne}>Up</MainButton>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  counter: state.counter
+})
+
+export default connect(mapStateToProps)(Counter)
