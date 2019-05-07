@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
 import roadmap from './roadmap'
+import counter from './counter'
 
 export default combineReducers({
-  roadmap: roadmap
+  roadmap: roadmap,
+  counter: counter
 })
