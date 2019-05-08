@@ -11,6 +11,7 @@ import store from './store'
 // COMPONENTS
 import PageTitle from './components/PageTitle/PageTitle'
 import RoadmapList from './components/RoadmapList/RoadmapList';
+import Counter from './components/Counter/Counter';
 // import Counter from './components/Counter/Counter';
 
 export default class App extends Component {
@@ -25,7 +26,10 @@ export default class App extends Component {
 					</div>
 
 					<Route exact path="/" render={() => (
-						<PageTitle title="React Component" />
+						<Fragment>
+							<PageTitle title="React Component" />
+							<Counter></Counter>
+						</Fragment>
 					)}></Route>
 
 					<Route path="/list" render={() => (
