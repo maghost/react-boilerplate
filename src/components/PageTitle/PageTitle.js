@@ -1,16 +1,19 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 
 // STYLE
 import './PageTitle.scss'
-// import Loading from '../Loading/Loading';
 
 const PageTitle = (props) => {
 	return (
 		<div className="PageTitle">
 			<h1 className="PageTitle__title">{ props.title ? props.title : "Title" }</h1>
-			{/* <Loading/> */}
 		</div>
 	)
 }
 
-export default PageTitle
+const mapStateToProps = (state) => ({
+	title: state.title
+})
+
+export default connect(mapStateToProps)(PageTitle)
