@@ -4,7 +4,7 @@ import * as React from 'react'
 import './LinksHeader.scss'
 
 // COMPONENTS
-import { RouteComponent } from '../RouteLink/RouteLink'
+import { RouteComponent } from '../../components/RouteLink/RouteLink'
 
 const LinksHeader = () => {
 	return (
