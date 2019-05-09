@@ -8,7 +8,7 @@ const RouteComponent = ({ to, label }) => {
 	return (
 		<Route
 			path={to}
-			exact="true"
+			exact={true}
 			children={({match}) => (
 				<div className={match ? "active" : "not-active"}>
 					<Link to={to}>{label}</Link>

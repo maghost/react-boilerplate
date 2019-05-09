@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import * as React from 'react'
 import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
 
@@ -14,7 +14,7 @@ import RoadmapList from './components/RoadmapList/RoadmapList';
 import Counter from './components/Counter/Counter';
 import { LinksHeader } from './containers/LinksHeader/LinksHeader'
 
-export default class App extends Component {
+export default class App extends React.Component {
 	// no CONSTRUCTOR - if you do not initialize state or do not bind methods
 	render() {
 		return (
@@ -23,10 +23,10 @@ export default class App extends Component {
 					<LinksHeader />
 
 					<Route exact path="/" render={() => (
-						<Fragment>
+						<React.Fragment>
 							<PageTitle />
 							<Counter></Counter>
-						</Fragment>
+						</React.Fragment>
 					)}></Route>
 
 					<Route path="/list" render={() => (

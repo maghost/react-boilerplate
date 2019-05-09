@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 
 // STYLE
@@ -7,7 +7,15 @@ import './Counter.scss'
 // COMPONENTS
 import MainButton from '../MainButton/MainButton';
 
-class Counter extends Component {
+interface Props {
+  counter: number;
+}
+
+interface State {
+  count: number
+}
+
+class Counter extends React.Component<Props, State> {
   constructor(props) {
     super(props)
   }
@@ -31,8 +39,8 @@ class Counter extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  counter: state.counter
+const mapStateToProps = (state: State) => ({
+  counter: state.count
 })
 
 export default connect(mapStateToProps)(Counter)

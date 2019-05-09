@@ -15,5 +15,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('app')
 )
-
-// render(<App/>, document.getElementById('app'))
