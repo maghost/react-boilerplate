@@ -6,11 +6,13 @@ module.exports = {
 	// destiny of transpiled file
 	output: {
 		path: path.resolve(__dirname, 'public'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: '/'
 	},
 	// directory watched by webpack-dev-server when any update comes
 	devServer: {
 		contentBase: path.resolve(__dirname, "public"),
+		historyApiFallback: true,
 	},
 	// config. rules to transpiling project
 	module: {

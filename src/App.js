@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Provider } from 'react-redux'
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 // STYLE
 import './app.scss'
@@ -12,7 +12,7 @@ import store from './store'
 import PageTitle from './components/PageTitle/PageTitle'
 import RoadmapList from './components/RoadmapList/RoadmapList';
 import Counter from './components/Counter/Counter';
-// import Counter from './components/Counter/Counter';
+import { LinksHeader } from './containers/LinksHeader/LinksHeader'
 
 export default class App extends Component {
 	// no CONSTRUCTOR - if you do not initialize state or do not bind methods
@@ -20,10 +20,7 @@ export default class App extends Component {
 		return (
 			<Provider store={store}>
 				<div className="app">
-					<div>
-						<Link to={`/`}>Title</Link>
-						<Link to={`/list`}>List</Link>
-					</div>
+					<LinksHeader />
 
 					<Route exact path="/" render={() => (
 						<Fragment>
@@ -35,7 +32,6 @@ export default class App extends Component {
 					<Route path="/list" render={() => (
 						<RoadmapList></RoadmapList>
 					)}></Route>
-					{/* <Counter></Counter> */}
 				</div>
 			</Provider>
 		)
