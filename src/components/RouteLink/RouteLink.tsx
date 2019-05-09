@@ -4,14 +4,19 @@ import { Link, Route } from 'react-router-dom'
 // STYLE
 import './RouteLink.scss'
 
-const RouteComponent = ({ to, label }) => {
+interface Props {
+  to: string,
+  label: string
+}
+
+const RouteComponent = (props: Props) => {
 	return (
 		<Route
-			path={to}
+			path={props.to}
 			exact={true}
 			children={({match}) => (
 				<div className={match ? "active" : "not-active"}>
-					<Link to={to}>{label}</Link>
+					<Link to={props.to}>{props.label}</Link>
 				</div>
 			)}
 		/>

@@ -8,7 +8,7 @@ import './Counter.scss'
 import MainButton from '../MainButton/MainButton';
 
 interface Props {
-  counter: number;
+  counter: number
 }
 
 interface State {
@@ -16,7 +16,7 @@ interface State {
 }
 
 class Counter extends React.Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props)
   }
 

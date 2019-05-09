@@ -1,21 +1,16 @@
 import React, { Component  } from 'react'
-import PropTypes from 'prop-types'
 
 // STYLE
 import './MainButton.scss'
 
-export default class MainButton extends Component {
-	constructor(props) {
-		super(props)
-	}
+interface Props {
+  action(): void,
+  children: string
+}
 
-	static defaultProps = {
-		children: 'Button Label',
-	}
-	
-	static propTypes = {
-		children: PropTypes.string,//.isRequired
-		action: PropTypes.func.isRequired
+export default class MainButton extends Component<Props> {
+	constructor(props: Props) {
+		super(props)
 	}
 
 	showURL = () => {

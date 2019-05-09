@@ -4,7 +4,15 @@ import { connect } from 'react-redux'
 // STYLE
 import './PageTitle.scss'
 
-const PageTitle = (props) => {
+interface Props {
+  title: string
+}
+
+interface State {
+  title: string
+}
+
+const PageTitle = (props: Props) => {
 	return (
 		<div className="PageTitle">
 			<h1 className="PageTitle__title">{ props.title ? props.title : "Title" }</h1>
@@ -12,7 +20,7 @@ const PageTitle = (props) => {
 	)
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: State) => ({
 	title: state.title
 })
 
