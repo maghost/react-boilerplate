@@ -24,7 +24,7 @@ export default class App extends Component {
 
 					<Route exact path="/" render={() => (
 						<Fragment>
-							<PageTitle title="React Component" />
+							<PageTitle />
 							<Counter></Counter>
 						</Fragment>
 					)}></Route>
