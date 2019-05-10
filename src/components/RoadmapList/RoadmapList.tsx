@@ -1,38 +1,33 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { ApplicationState } from '../../store'
+
+import { Roadmap } from '../../store/ducks/roadmaps/types'
+
 // STYLE
 import './RoadmapList.scss'
 
-interface Item {
-  id: number,
-  roadmap: string
+interface StateProps {
+  roadmaps: Roadmap[]
 }
 
-interface Props {
-  roadmaps: Array<Item>
-}
+type Props = StateProps
 
-interface State {
-  roadmap: Array<Item>
-}
+const RoadmapList = (props: Props) => (
+  <div className="RoadmapList">
+    <ul className="RoadmapList__list">
+      { props.roadmaps.map(roadmap => (
+        <li className="RoadmapList__listItem" key={roadmap.id}>
+          <input type="checkbox" /> {roadmap.name}
+        </li>
+      )) }
+    </ul>
+  </div>
+)
 
-const RoadmapList = ( props: Props ) => {
-  return (
-    <div className="RoadmapList">
-      <ul className="RoadmapList__list">
-        { props.roadmaps.map((item) => (
-          <li className="RoadmapList__listItem" key={item.id}>
-            <input type="checkbox" /> {item.roadmap}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-const mapStateToProps = (state: State) => ({
-  roadmaps: state.roadmap
+const mapStateToProps = (state: ApplicationState) => ({
+  roadmaps: state.roadmaps.data
 })
 
 export default connect(mapStateToProps)(RoadmapList)

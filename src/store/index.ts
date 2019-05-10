@@ -1,7 +1,14 @@
-import { createStore } from 'redux'
+import { createStore, Store } from 'redux'
+import { RoadmapsState } from './ducks/roadmaps/types'
 
-import reducers from './reducers'
+import { rootReducer } from './ducks/rootReducer'
 
-const store = createStore(reducers)
+export interface ApplicationState {
+  roadmaps: RoadmapsState
+}
 
-export default store
+const store: Store<ApplicationState> = createStore(rootReducer)
+
+export {
+  store
+}
