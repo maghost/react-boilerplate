@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { roadmapsReducers } from './roadmaps/reducers'
+import { reducer as roadmapsReducer } from './roadmaps/reducer'
 
 const rootReducer = combineReducers({
-  roadmapsReducers
+  roadmaps: roadmapsReducer
 })
 
 export {

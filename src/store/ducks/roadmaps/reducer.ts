@@ -3,16 +3,14 @@ import { RoadmapsState, RoadmapsTypes } from './types'
 
 const INITIAL_STATE: RoadmapsState = {
   data: [
-    {
-      id: 1,
-      name: 'Roadmap A'
-    }
+    { id: 1, name: 'Roadmap A' },
+    { id: 2, name: 'Roadmap B' }
   ],
   error: false,
   loading: false
 }
 
-const roadmapsReducers: Reducer<RoadmapsState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<RoadmapsState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case RoadmapsTypes.LOAD_REQUEST:
       return {
@@ -42,5 +40,5 @@ const roadmapsReducers: Reducer<RoadmapsState> = (state = INITIAL_STATE, action)
 }
 
 export {
-  roadmapsReducers
+  reducer
 }
